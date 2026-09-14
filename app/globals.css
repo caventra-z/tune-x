@@ -1,26 +1,107 @@
-@import "tailwindcss";
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0A0A0A;
+  --bg-card: #141414;
+  --accent: #06B6D4;
+  --accent-light: #22D3EE;
+  --text-muted: #A0A0A0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Vazirmatn', sans-serif;
+  background: var(--bg-primary);
+  color: white;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  direction: rtl;
 }
+
+a { color: inherit; text-decoration: none; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #06B6D4, #22D3EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #06B6D4, #22D3EE);
+  color: #0A0A0A;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 12px;
+  transition: all 0.3s;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+}
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 12px;
+  transition: all 0.3s;
+  display: inline-block;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  transform: translateY(-4px);
+}
+
+input, select, textarea {
+  background: #1A1A1A;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  width: 100%;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 15px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
